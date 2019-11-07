@@ -24,7 +24,7 @@ yesterday = today - timedelta(days=1)
 today_date = today.strftime("%d-%m-%Y")
 yesterday_date = yesterday.strftime("%d-%m-%Y")
 
-data = {"data": {"comercio": USERNAME, "terminal": None, "fechaIni": "29-10-2019", "fechaFin": today_date,
+data = {"data": {"comercio": USERNAME, "terminal": None, "fechaIni": yesterday_date, "fechaFin": today_date,
                  "tipo": None, "resultado": None, "horaIni": "00:00:00", "horaFin": "23:59:59", "pedido": None,
                  "order": "fechaNotificacion,horaNotificacion", "direction": "ASC", "tempHoraInicio": "0",
                  "tempMinutoInicio": "0", "tempHoraFin": "23", "tempMinutoFin": "59"},
