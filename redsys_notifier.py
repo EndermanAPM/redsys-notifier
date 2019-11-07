@@ -24,7 +24,7 @@ yesterday = today - timedelta(days=1)
 today_date = today.strftime("%d-%m-%Y")
 yesterday_date = yesterday.strftime("%d-%m-%Y")
 
-data = {"data": {"comercio": USERNAME, "terminal": None, "fechaIni": 29-10-2019, "fechaFin": today_date,
+data = {"data": {"comercio": USERNAME, "terminal": None, "fechaIni": "29-10-2019", "fechaFin": today_date,
                  "tipo": None, "resultado": None, "horaIni": "00:00:00", "horaFin": "23:59:59", "pedido": None,
                  "order": "fechaNotificacion,horaNotificacion", "direction": "ASC", "tempHoraInicio": "0",
                  "tempMinutoInicio": "0", "tempHoraFin": "23", "tempMinutoFin": "59"},
@@ -36,8 +36,9 @@ if nots['numberOfElements'] != nots['totalElements']:
 
 unsuccessful_notifications = [notif['detalleResultado'] for notif in nots['content'] if notif['resultadoNotificacion'] != 'S']
 if len(unsuccessful_notifications) != 0:
+    print("Notifications with errors:")
     for un in unsuccessful_notifications:
-        print(un)
+        print("\t", un)
     raise Exception("fml")  # Hopefully if the actions fails Github will notify me, so I don't have to implement it.
 print("No unsuccessful_notifications found")
 
